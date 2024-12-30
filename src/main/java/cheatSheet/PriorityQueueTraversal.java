@@ -57,7 +57,7 @@ public class PriorityQueueTraversal {
 
         huffmenCodes.forEach((character,code)-> System.out.println(character+"   "+code));
        StringBuilder encodedString= encode(text,huffmenCodes);
-      StringBuilder deCodedData=  decode(encodedString.toString(),huffmenCodes);
+         StringBuilder deCodedData=  decode(encodedString.toString(),huffmenCodes);
         System.out.println(deCodedData);
 
     }
@@ -87,7 +87,8 @@ public class PriorityQueueTraversal {
         Node leftNode = priorityQueue.poll();
         Node rightNode = priorityQueue.poll();
 
-        Node newNode = new Node(leftNode.frequency+rightNode.frequency,leftNode,rightNode);
+       assert rightNode != null;
+       Node newNode = new Node(leftNode.frequency+rightNode.frequency,leftNode,rightNode);
         priorityQueue.add(newNode);
     };
         System.out.println("After Adding new Nodes ");
