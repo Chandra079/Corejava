@@ -21,5 +21,13 @@ public class ThreadCreation {
         for (int i = 0; i < 1000; i++) {
             System.out.println("Main Thread");
         }
+
+
+        new Thread(()-> {
+            for (int i = 0; i < 10000; i++) {
+                System.out.println("New THREAD Was Created ");
+            }
+
+        }).start();
     }
 }

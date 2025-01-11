@@ -26,6 +26,7 @@ public class Java8MethodCheatSheet {
         Optional<Employee> maxPaidEmployee = employees.stream().max(Comparator.comparingDouble(Employee::getSalary));
         System.out.println( " Max Salry: "+maxPaidEmployee);
 
+        System.out.println(employees.stream().max(Comparator.comparing(Employee::getSalary)).get().toString());
 
         //GGrouping By
 
