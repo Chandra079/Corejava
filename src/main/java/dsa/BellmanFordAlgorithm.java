@@ -1,3 +1,5 @@
+package dsa;
+
 import java.util.*;
 
 class Edge {

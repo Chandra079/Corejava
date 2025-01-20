@@ -17,7 +17,7 @@ public class SingletonClassExample implements Serializable,Cloneable {
         }
         return instance;
     }
-
+//  ReadResolve method will be used to prevent Mutliple Objects creation while Serilization
     public SingletonClassExample doResolve(){
         return getInstance();
     }

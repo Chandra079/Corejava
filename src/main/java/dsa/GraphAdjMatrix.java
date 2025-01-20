@@ -1,3 +1,5 @@
+package dsa;
+
 public class GraphAdjMatrix {
     public static void main(String[] args) {
         int V = 4; // Number of vertices
