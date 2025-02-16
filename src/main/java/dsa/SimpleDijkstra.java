@@ -23,7 +23,7 @@ class SimpleDijkstra {
         Arrays.fill(distances, Integer.MAX_VALUE);
         distances[source] = 0;
 
-        // Priority queue to store the vertex and its distance
+        // Priority queue for selecting the vertex with the smallest distance
         PriorityQueue<Edge> priorityQueue = new PriorityQueue<>(Comparator.comparingInt(e -> e.weight));
         priorityQueue.offer(new Edge(source, 0));
 
