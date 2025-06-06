@@ -29,7 +29,7 @@ public class WhyNotFuture {
 
     private  static void  delay(int i){
         try {
-            Thread.sleep(i*60000);
+            Thread.sleep(i*600);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

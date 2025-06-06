@@ -26,5 +26,6 @@ public class NonBlockingMainThread {
         future.join();
 
         System.out.println("Main thread ends: " + Thread.currentThread().getName());
+
     }
 }
