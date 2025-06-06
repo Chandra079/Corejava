@@ -10,12 +10,16 @@ public class FindMax3Numbers {
     public static void main(String[] args) {
         System.out.println("Started");
 
-        int[] arr = new int[]{ 4,5,6,7,2,7,8,20};
+      //  int[] arr = new int[]{ 4,5,6,7,2,7,8,20};
 
+        String data = "apple,banana,mango";
+        List<String> list = Arrays.asList(data.split(","));
 
         List<Integer> number = Arrays.asList(4,5,6,7,2,7,8,20);
 
-        List<Integer> collect = number.stream().sorted((a,b)-> b-a).limit(3).collect(Collectors.toList());
+        List<Integer> collect = number.stream().sorted((a,b)-> b-a).limit(3).
+
+                collect(Collectors.toList());
 
         collect.forEach(i-> System.out.println(i));
     }

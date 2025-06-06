@@ -52,8 +52,10 @@ public class TestClass {
         String inputString="ilovejavatechie ";
         char[] charArray = inputString.toCharArray();
 
-        Map<Character, Long> collect = IntStream.range(0, inputString.length() - 1).mapToObj(i -> charArray[i]).filter(c->!Character.isWhitespace(c)).
+        Map<Character, Long> collect = IntStream.range(0, inputString.length() - 1).
+                mapToObj(i -> charArray[i]).filter(c->!Character.isWhitespace(c)).
                 collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
 
         collect.forEach((k,v)-> System.out.println(k+" "+v));
 
@@ -62,6 +64,8 @@ public class TestClass {
         String inputVowels="ilovejavatechie";
 
         String vowelString ="AEIOUaeiou";
+
+        inputVowels.chars().mapToObj(c-> (char) c).collect(Collectors.groupingBy(c-> vowelString.indexOf(c) !=-1 ?"vowel": "cononent",Collectors.counting()));
 
         Map<String, Long> vowelMap = inputVowels.chars().mapToObj(c -> (char) c).
                 collect(Collectors.groupingBy(c -> vowelString.indexOf(c) != -1 ? "Vowel" : "Consent", Collectors.counting()));
@@ -78,6 +82,8 @@ public class TestClass {
 
 
     }
+
+
 
 
 

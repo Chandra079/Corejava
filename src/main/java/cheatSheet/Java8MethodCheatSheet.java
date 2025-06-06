@@ -11,10 +11,11 @@ public class Java8MethodCheatSheet {
         List<Employee> employees = EmployeeDataBase.getAllEmployees();
 
         employees.forEach(employee -> System.out.println(employee.getName()+"    "+employee.getSalary()));
+//AscendingOrder Salary
+        List<Employee> ascendigSalariedEmployee = employees.stream().sorted(Comparator.comparing(Employee::getSalary)).collect(Collectors.toList());
 
-        List<Employee> ascendigSalariedEmployee = employees.stream().sorted(Comparator.comparing(Employee::getSalary)).
-                collect(Collectors.toList());
 
+        //DescendingOrder
         ascendigSalariedEmployee.forEach(System.out::println);
         List<Employee> discendingSalry = employees.stream().sorted(Collections.reverseOrder(Comparator.comparing(Employee::getSalary))).
                 collect(Collectors.toList());
@@ -32,6 +33,7 @@ public class Java8MethodCheatSheet {
 
         Map<String, Long> collect = employees.stream().collect(Collectors.groupingBy(Employee::getGender,Collectors.counting()));
 
+        System.out.println("--------------Count of EMployesss");
         collect.forEach((key,value)-> System.out.println(key+" "+ value));
 
         Map<String, List<String>> collectNames = employees.stream().collect(Collectors.groupingBy(Employee::getGender,Collectors.mapping(Employee::getName,Collectors.toList())));

@@ -5,6 +5,8 @@ import java.util.Arrays;
 public class AnagramCheck {
 
     public static void main(String[] args) {
+
+
         System.out.println(new AnagramCheck().checkAnagram("ABC","CAB"));
     }
     public boolean checkAnagram(String s1, String s2){

@@ -9,14 +9,15 @@ public class EmployeesNamesWithCommaSeperatedKeyasDeptName {
 
         List<Employee> employees = EmployeeDataBase.getAllEmployees();
 
-        Map<String, List<String>> collect = employees.stream().collect(
-                Collectors.groupingBy(Employee::getDept,
-                        Collectors.mapping(Employee::getName, Collectors.toList())));
+        Map<String, List<String>> collect = employees.stream().collect(Collectors.groupingBy(
+                Employee::getDept,Collectors.mapping(Employee::getName,Collectors.toList())
+        ));
 
         collect.forEach((k,v)-> System.out.println(k+":- "+v));
         System.out.println("------------------------------------");
 
-        Map<String, String> employeesNameswithComma = employees.stream().collect(Collectors.groupingBy(Employee::getDept,
+        Map<String, String> employeesNameswithComma = employees.stream()
+                .collect(Collectors.groupingBy(Employee::getDept,
                 Collectors.mapping(Employee::getName, Collectors.joining(","))));
 
         employeesNameswithComma.forEach((k,v)-> System.out.println(k+":- "+v));

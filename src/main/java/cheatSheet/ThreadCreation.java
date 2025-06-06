@@ -2,7 +2,7 @@ package cheatSheet;
 
 public class ThreadCreation {
     public static void main(String[] args) {
-        Runnable runnable = ()->{
+     /*   Runnable runnable = ()->{
             for (int i = 0; i <1000; i++) {
                 System.out.println("Thread is Running and Started ");
             }
@@ -29,5 +29,29 @@ public class ThreadCreation {
             }
 
         }).start();
+
+        */
+
+        /// restart
+
+        Runnable runnable1 = ()->{
+            System.out.println("Test Thread ");
+        };
+
+        new Thread(runnable1).start();
+
+
+
+      ThreadClass threadClass = new ThreadClass();
+
+      threadClass.start();
+    }
+}
+
+class ThreadClass extends Thread{
+
+    @Override
+    public void run() {
+        System.out.println("From Thread Class");
     }
 }

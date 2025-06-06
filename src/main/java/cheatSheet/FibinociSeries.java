@@ -15,7 +15,7 @@ public class FibinociSeries {
 
 
 
-        Stream.iterate(new int[]{0,1},arr-> new int[]{arr[1],arr[0]+arr[1]}).limit(20);
+            Stream.iterate(new int[]{0,1},arr-> new int[]{arr[1],arr[0]+arr[1]}).limit(20);
 
     }
 }
