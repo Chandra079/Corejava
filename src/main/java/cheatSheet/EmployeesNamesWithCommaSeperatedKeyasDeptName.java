@@ -9,6 +9,9 @@ public class EmployeesNamesWithCommaSeperatedKeyasDeptName {
 
         List<Employee> employees = EmployeeDataBase.getAllEmployees();
 
+        Map<String, List<Employee>> collect1 = employees.stream().collect(Collectors.groupingBy(
+                Employee::getDept));
+
         Map<String, List<String>> collect = employees.stream().collect(Collectors.groupingBy(
                 Employee::getDept,Collectors.mapping(Employee::getName,Collectors.toList())
         ));

@@ -16,7 +16,7 @@ public class FirstNonRepeatingChar {
         LinkedHashMap<Character, Long> collect = processed.chars().mapToObj(c -> (char) c).collect(Collectors.groupingBy(
                 Function.identity(), LinkedHashMap::new, Collectors.counting()));
 
-        Optional<Character> firstNonRepeatingChatacter = collect.entrySet().stream().filter(entry -> entry.getValue() == 1)
+        collect.entrySet().stream().filter(entry -> entry.getValue() == 1)
                 .map(entry -> entry.getKey()).findFirst();
 
     }

@@ -50,8 +50,12 @@ public class TestClass {
         System.out.println("Vowels and consonants Count ");
 
         String inputString="ilovejavatechie ";
-        char[] charArray = inputString.toCharArray();
 
+
+        inputString.chars().mapToObj(c->(char)c).collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+
+
+        char[] charArray = inputString.toCharArray();
         Map<Character, Long> collect = IntStream.range(0, inputString.length() - 1).
                 mapToObj(i -> charArray[i]).filter(c->!Character.isWhitespace(c)).
                 collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
